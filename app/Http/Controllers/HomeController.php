@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Fleur;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Auth;
+
 
 class HomeController extends Controller
 {
@@ -23,6 +27,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $fleurs = Fleur::orderBy('created_at', 'desc');
+        $fleurs = $fleurs->paginate(15);
+        return view('home', compact("fleurs"));
     }
+
+    public function admindashbord()
+    {
+        $fleurs = Fleur::orderBy('created_at', 'desc');
+        $fleurs = $fleurs->paginate(15);
+        return view('fleurs.index', compact('fleurs'));
+    }
+
+    
 }

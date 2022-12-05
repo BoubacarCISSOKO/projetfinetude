@@ -10,79 +10,130 @@
     }
 </style>
 
+<section class="bg-success py-5">
         <div class="container">
-       
-            <div class="card">
-                <div class="card-header">
-                <h2 style=""> les offres recentes</h2>
-                    <!-- end csv -->
+            <div class="row align-items-center py-5">
+                <div class="col-md-8 text-white">
+                    <h1>About Us</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
                 </div>
-                <!-- /.card-header -->
-                
-                <!-- /.card-body -->
-            </div>
+                <div class="col-md-4">
 
-            <div class="row" style="background-color:">
-                espace des offres
-            </div>
-        </div>
-    <!-- Featured Start -->
-    <div class="container-fluid pt-5">
-        <div class="row px-xl-5 pb-1">
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
-                    <h1 class="fa fa-check text-primary m-0 mr-3"></h1>
-                    <h5 class="font-weight-semi-bold m-0 text-white">Competences</h5>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
-                    <h1 class="fa fa-shipping-fast text-primary m-0 mr-2"></h1>
-                    <h5 class="font-weight-semi-bold m-0 text-white">Niveau</h5>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
-                    <h1 class="fas fa-exchange-alt text-primary m-0 mr-3"></h1>
-                    <h5 class="font-weight-semi-bold m-0 text-white">Marché</h5>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
-                    <h1 class="fa fa-phone-volume text-primary m-0 mr-3"></h1>
-                    <h5 class="font-weight-semi-bold m-0 text-white">Veille NTIC</h5>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row px-xl-5 pb-3 position-relative text-center text-white mb-1 py-5 px-5">
-               <h2 style="color:white">Touts les prfils</h2>
-             
-               <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="product-categories-wrap product-categories-border mb-15">
-                        <blockquote class="blockquote" style="text-align: center;">
-                            profil des stag...
-                        </blockquote>
+                    <!-- Start Banner Hero -->
+                    <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
+                        <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
+                        <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="container">
+                                <div class="row p-5">
+                                <img src="assets/img/about-hero.svg" alt="About Hero"> 4
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="container">
+                                <div class="row p-5">
+                                <img src="assets/img/about-hero.svg" alt="About Hero">2
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="container">
+                                <div class="row p-5">
+                                <img src="assets/img/about-hero.svg" alt="About Hero"> 1
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </a>
+                    <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
                 </div>
-               
-                
-                
-                
-            </div>
-            
-        </div>
-    </div>
-    <!-- Featured End -->
+                <!-- End Banner Hero -->
 
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Close Banner -->
+
+    <!-- Start Section -->
+      
+    <div class="container mt-2">
+       
+       <div class="card">
+       <div class="card-header">
+           <h2 style="">Tous les produits de fleurs</h2>
+               <!-- end csv -->
+           </div>
+       <div class="row">
+
+       @foreach($fleurs as $key => $fleur)
+           <div class="col-12 col-md-4 p-5 mt-3">
+               <div class="card rounded-0">
+                   <a href="#"><img src="{{url('images/fleurs/'.$fleur->photo)}}" class="card-img rounded-0 img-fluid" style=" width: 100%;height: 150px;"></a>
+                   
+               </div>
+               <div class="card-body">
+                   <a href="shop-single.html" class="h3 text-decoration-none">{{$fleur->name}}</a>
+                   <p class="text-center mb-0">{{number_format($fleur->price) }} fcfa</p>
+                   <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <input type="hidden" value="{{ $fleur->id }}" name="id">
+                        <input type="hidden" value="{{ $fleur->name }}" name="name">
+                        <input type="hidden" value="{{ $fleur->price }}" name="price">
+                        <input type="hidden" value="{{ $fleur->image }}"  name="image">
+                        <input type="hidden" value="1" name="quantity">
+                        <button class="px-4 py-2 text-black rounded">Ajouter au panier</button>
+                    </form>
+               </div>
+           </div>
+
+         @endforeach
+
+           
+           </div>
+           <div div="row">
+               <ul class="pagination pagination-lg justify-content-end">
+                   <li class="page-item disabled">
+                       <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#" tabindex="-1">1</a>
+                   </li>
+                   <li class="page-item">
+                       <a class="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" href="#">2</a>
+                   </li>
+                   <li class="page-item">
+                       <a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark" href="#">3</a>
+                   </li>
+               </ul>
+           </div>
+
+          
+           <!-- /.card-header -->
+           
+           <!-- /.card-body -->
+       </div>
+
+   </div>
+    <!-- End Section -->
      <!-- Footer Start -->
-     <div class="container-fluid bg-secondary mt-1 pt-1" style="background-color: #501b0e !important;color: #ffffff !important;">
+     <div class="container-fluid bg-secondary mt-1 pt-1" style="background-color: #59ab6e !important;color: #ffffff !important;">
         <div class="row border-top border-light mx-xl-5 py-4">
             <div class="col-md-6 px-xl-0">
                 <p class="mb-md-0 text-center text-md-left">
-                     <a class="font-weight-semi-bold text-white" href="#">Shop ISEP</a> © 2022 - &copy;Tous droits réservés. Réalisé
-                    par <strong>Projet de fin d'Etude</strong>
+                     <a class="font-weight-semi-bold text-white" href="#"> MinaISEP</a> © 2022 - &copy;Tous droits réservés. Réalisé
+                    par <strong>Mina</strong>
                 </p>
             </div>
             <div class="col-md-6 px-xl-0 text-center text-md-right">

@@ -22,12 +22,12 @@
 }
 </style>
  <!-- Footer Start -->
- <div class="container-fluid bg-secondary mt-1 pt-1">
+ <div class="container-fluid bg-secondary mt-1 pt-1" style="background-color: #59ab6e !important;color: #ffffff !important;">
         <div class="row border-top border-light mx-xl-5 py-4">
             <div class="col-md-6 px-xl-0">
-            <p class="mb-md-0 text-center text-md-left">
-                     <a class="font-weight-semi-bold text-white" href="#">Shop ISEP</a> © 2022 - &copy;Tous droits réservés. Réalisé
-                    par <strong>Projet de fin d'Etude</strong>
+                <p class="mb-md-0 text-center text-md-left">
+                     <a class="font-weight-semi-bold text-white" href="#"> MinaISEP</a> © 2022 - &copy;Tous droits réservés. Réalisé
+                    par <strong>Mina</strong>
                 </p>
             </div>
             <div class="col-md-6 px-xl-0 text-center text-md-right">

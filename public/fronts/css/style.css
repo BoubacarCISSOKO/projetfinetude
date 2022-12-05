@@ -6705,7 +6705,7 @@ button.bg-primary:focus {
 }
 
 .bg-secondary {
-  background-color: #501b0e !important;
+  background-color: #59ab6e !important;
 }
 
 a.bg-secondary:hover,
@@ -7262,7 +7262,7 @@ button.bg-dark:focus {
 
 .align-items-center {
   align-items: center !important;
-  background-color: #501b0e !important;
+  background-color: #59ab6e !important;
   color: #ffffff !important;
 }
 
